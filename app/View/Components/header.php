@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class header extends Component
 {
+
     /**
      * Create a new component instance.
      *
@@ -14,6 +15,7 @@ class header extends Component
     public function __construct()
     {
         //
+
     }
 
     /**

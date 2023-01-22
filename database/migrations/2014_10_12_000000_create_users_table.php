@@ -24,9 +24,9 @@ return new class extends Migration
             $table->string('phone');
             $table->string('password');
             $table->string('conpassword');
-            $table->string('country');
+            $table->string('country')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-           
+
             $table->rememberToken();
             $table->timestamps();
         });

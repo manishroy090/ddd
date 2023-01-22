@@ -1,0 +1,9 @@
+.action{
+    display: flex;
+    flex-direction: row;
+
+}
+.del
+{
+ margin-left: 2rem;
+}

@@ -8,15 +8,26 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+         @guest
+         <li class="nav-item active">
+            <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ route('registerview') }}">Register</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}" id="login">Login</a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ route('register') }}">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="" id="login">Login</a>
+             @else
+             <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}" id="login">logout</a>
               </li>
+         @endguest
+
+
+
+
+
 
           </ul>
           <form class="form-inline my-2 my-lg-0">

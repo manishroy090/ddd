@@ -31,7 +31,7 @@ class User extends Authenticatable
         'password',
         'country',
         'password',
-
+        'conpassword',
 
     ];
 

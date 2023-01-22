@@ -12,8 +12,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{ asset('cssfile/register.css') }}"
-            <link rel="stylesheet" href="{{ asset('cssfile/login.css') }}"
+
+       
 
         <!-- google_font -->
         <link
@@ -26,12 +26,9 @@
 
     <body>
         <x-header />
-        <div class="regicontainer" id="reg">
-            <x-register :countries="$countries"/>
-        </div>
-        <div class="regicontainer" id="logincontainer">
-            <x-login/>
-        </div>
+
+
+
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

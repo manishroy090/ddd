@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\authController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\indexController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-Route::get('/', [authController::class, 'view']);
-Route::get('/register', [authController::class, 'registerview'])->name('register');
-Route::Post('/register', [authController::class, 'creatuser'])->name('register');
-Route::get('/login', function () {
-    return view('components.login');
-})->name('login');
-Route::get('/users', [authController::class, 'users']);
+
+Route::get('/', [AuthController::class, 'view'])->name('home');
+Route::get('/register',[AuthController::class, 'registerview'])->name('registerview');
+Route::Post('/register', [AuthController::class, 'creatuser'])->name('register');
+Route::get('/login' ,[AuthController::class,'loginview'])->name('login');
+Route::post('/login' ,[AuthController::class,'Authenticate'])->name('login');
+
+Route::get('/users', [AuthController::class, 'users'])->name('users')->middleware('auth');
+Route::get('/data', [indexController::class, 'index']);
+
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
